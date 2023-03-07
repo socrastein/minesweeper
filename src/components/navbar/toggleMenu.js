@@ -2,6 +2,7 @@ import xSVG from "./x.svg";
 import menuSVG from "./menu.svg";
 
 export default function toggleMenu() {
+  console.log("Toggling menu");
   const menuBar = document.getElementById("menuBar");
   const menuIcon = document.getElementById("menuIcon")
 

@@ -11,6 +11,7 @@ import loadFooter from "./components/footer/footer";
 import loadNavBar from "./components/navbar/navBar";
 import onResize from "./components/navbar/navBarResize";
 import newGame from "./components/newGame/newGame";
+import toggleMenu from "./components/navbar/toggleMenu";
 
 
 // CONSTANT ELEMENTS
@@ -20,11 +21,10 @@ import newGame from "./components/newGame/newGame";
 window.addEventListener("resize", onResize);
 
 // RUN FUNCTIONS TO LOAD CONTENT:
-console.log("Testing");
-
 loadNavBar();
 onResize();
 
 newGame("easy");
+toggleMenu();
 
 loadFooter();

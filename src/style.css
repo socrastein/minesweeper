@@ -141,7 +141,9 @@
   outline: 1px solid;
 }
 
-
+.mine {
+  background-color: red;
+}
 
   /*        */
  /* FOOTER */
