@@ -13,9 +13,9 @@ export default function loadFooter() {
   logoImage.id = "gitLogo";
   logoContainer.appendChild(logoImage);
 
-  const indexFooter = document.getElementsByTagName("footer");
+  const footer = document.querySelector("footer");
 
-  indexFooter[0].appendChild(footerText);
-  indexFooter[0].appendChild(logoContainer);
+  footer.appendChild(footerText);
+  footer.appendChild(logoContainer);
   
 }

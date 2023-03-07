@@ -80,6 +80,8 @@
 
 #mainContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Navigation Bar */
@@ -90,13 +92,11 @@
   padding: 1rem;
 }
 
-#siteTitle {
+/* #siteTitle {
+} */
 
-}
-
-#siteLogo {
-
-}
+/* #siteLogo {
+} */
 
 #siteName {
   font-size: 1.5rem;
@@ -119,8 +119,26 @@
   width: 3rem;
 }
 
-#menuContainer {
-  
+/* #menuContainer {
+} */
+
+  /*            */
+ /* GAME BOARD */
+/*            */
+
+#gameBoard {
+  margin-top: 2rem;
+  max-width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: auto;
+
+}
+
+.gameCell {
+  height: 2rem;
+  width: 2rem;
+  outline: 1px solid;
 }
 
 

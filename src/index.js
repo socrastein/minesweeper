@@ -10,6 +10,7 @@ import "./style.css";
 import loadFooter from "./components/footer/footer";
 import loadNavBar from "./components/navbar/navBar";
 import onResize from "./components/navbar/navBarResize";
+import newGame from "./components/newGame/newGame";
 
 
 // CONSTANT ELEMENTS
@@ -23,5 +24,7 @@ console.log("Testing");
 
 loadNavBar();
 onResize();
+
+newGame("easy");
 
 loadFooter();

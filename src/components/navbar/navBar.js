@@ -24,7 +24,7 @@ export default function loadNavBar() {
 
   let siteName = document.createElement("p");
   siteName.id = "siteName";
-  siteName.textContent = "Minesweeper"; //TODO: Rename this
+  siteName.textContent = "Minesweeper";
   siteTitle.appendChild(siteName);
 
   let menuBar = document.createElement("div");
@@ -33,7 +33,7 @@ export default function loadNavBar() {
   navContainer.appendChild(menuBar);
 
   let menuItems = [
-    { name: "Easy", onClick: () => newGame("easy") }, //TODO: FILL THESE IN
+    { name: "Easy", onClick: () => newGame("easy") },
     { name: "Normal", onClick: () => newGame("normal") },
     { name: "Hard", onClick: () => newGame("hard") },
   ];
