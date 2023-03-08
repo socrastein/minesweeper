@@ -41,7 +41,6 @@ export default function newGame(difficulty) {
   for (let i = 0; i < gameState.boardCellCount; i++) {
     let gameBoardCell = document.createElement("div");
     gameBoardCell.classList.add("gameCell");
-    gameBoardCell.innerHTML = i;
     gameBoardCell.id = `cell_${i}`;
     gameBoardCell.addEventListener("click", clickCell);
     gameBoardContainer.appendChild(gameBoardCell);
@@ -65,6 +64,15 @@ export default function newGame(difficulty) {
       randomNode.classList.add("mine");
     }
   }
+
+  var allMyHoverElements = document.getElementsByClassName("gameCell");
+
+  for (let i = 0; i < allMyHoverElements.length; i++) {
+     allMyHoverElements.item(i).onmouseover = function() {
+      gameState.hoveredCell = this;
+     }
+  }
+  
   const menuBar = document.getElementById("menuBar");
   if(menuBar.classList.contains("hidden")){
     return;
