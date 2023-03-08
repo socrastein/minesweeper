@@ -87,6 +87,8 @@
 /* Navigation Bar */
 #navContainer {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   width: 100%;
   align-items: center;
   padding: 1rem;
@@ -106,6 +108,7 @@
 #menuBar {
   gap: 2rem;
   padding: 1rem;
+  justify-content: flex-end;
 }
 
 .menuItem {
@@ -142,6 +145,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.gameCell:hover {
+  filter: brightness(80%)
 }
 
 .mine {
