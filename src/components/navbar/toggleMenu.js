@@ -2,10 +2,14 @@ import xSVG from "./x.svg";
 import menuSVG from "./menu.svg";
 
 export default function toggleMenu() {
+  let screenWidth = window.screen.width;
   console.log("Toggling menu");
   const menuBar = document.getElementById("menuBar");
   const menuIcon = document.getElementById("menuIcon")
-
+  if (screenWidth >= 600) {
+    return;
+  }
+  
   if(menuBar.classList.contains("hidden")){
     menuIcon.src = xSVG;
 
@@ -17,6 +21,7 @@ export default function toggleMenu() {
   } else {
     menuIcon.src = menuSVG;
     menuBar.setAttribute("class", "flexRow hidden");
+    menuBar.style.position = "static";
     menuBar.style.paddingTop = "1rem";
   }
 }
