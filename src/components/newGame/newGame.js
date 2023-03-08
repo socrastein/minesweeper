@@ -65,6 +65,8 @@ export default function newGame(difficulty) {
       randomNode.classList.add("mine");
     }
   }
-
-  toggleMenu();
+  const menuBar = document.getElementById("menuBar");
+  if(menuBar.classList.contains("hidden")){
+    return;
+  } else toggleMenu();
 }
