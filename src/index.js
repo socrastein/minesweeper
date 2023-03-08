@@ -11,8 +11,6 @@ import loadFooter from "./components/footer/footer";
 import loadNavBar from "./components/navbar/navBar";
 import onResize from "./components/navbar/navBarResize";
 import newGame from "./components/newGame/newGame";
-import toggleMenu from "./components/navbar/toggleMenu";
-import gameState from "./components/gameBoard/gameState";
 import setFlag from "./components/gameBoard/setFlag";
 
 
