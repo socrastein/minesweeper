@@ -13,26 +13,11 @@ import onResize from "./components/navbar/navBarResize";
 import newGame from "./components/newGame/newGame";
 import toggleMenu from "./components/navbar/toggleMenu";
 import gameState from "./components/gameBoard/gameState";
+import setFlag from "./components/gameBoard/setFlag";
 
 
 // CONSTANT ELEMENTS
-window.oncontextmenu = function (){
-  if(gameState.hoveredCell.innerHTML == "🚩"){
-    gameState.hoveredCell.innerHTML = "";
-  } else gameState.hoveredCell.innerHTML = "🚩";
-  return false;
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-  // Handler when the DOM is fully loaded 
-  var allMyHoverElements = document.getElementsByClassName("gameCell");
-
-  for (let i = 0; i < allMyHoverElements.length; i++) {
-     allMyHoverElements.item(i).onmouseover = function() {
-      gameState.hoveredCell = this;
-     }
-  }
-});
+window.oncontextmenu = setFlag;
 
 // EVENT LISTENERS
 // For displaying mobile menu when screen < 500px wide
