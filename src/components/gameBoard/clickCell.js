@@ -18,7 +18,6 @@ function checkNeighboringCells(cellIndex) {
       continue;
     }
     let neighbor = document.getElementById(`cell_${neighborIndex}`)
-    neighbor.classList.add("green");
     // if(neighbor.classList.contains("mine")){
 
     // }
