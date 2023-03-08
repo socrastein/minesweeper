@@ -1,4 +1,5 @@
 import gameState from "./gameState";
+import endGame from "./endGame";
 
 function checkNeighboringCells(cellIndex) {
   let neighborValues = [-10, -9, -8, -1, 1, 8, 9, 10]; // surrounding 6 cell's indices;
@@ -28,6 +29,6 @@ export default function clickCell(cell) {
   let cellIndex = Number(cell.target.id.substring(5));
 
   if (cell.target.classList.contains("mine")) {
-    console.log("Clicked a mine!");
+    endGame();
   } else checkNeighboringCells(cellIndex);
 }
