@@ -4,6 +4,8 @@ const gameState = {
   boardWidth: 9,
   numberMines: 10,
   hoveredCell: undefined,
+  mouseOverGameboard: false,
+  gameOver: false,
   get boardCellCount() {
     return this.boardHeight * this.boardWidth;
   }
