@@ -1,28 +1,26 @@
 import toggleMenu from "../navbar/toggleMenu";
 import clickCell from "../gameBoard/clickCell";
-import gameStateFunction from "../gameBoard/gameState";
+import gameState from "../gameBoard/gameState";
 
 export default function newGame(difficulty) {
-  
-  let gameState = gameStateFunction();
 
   switch (difficulty) {
     case "easy":
-      console.log("easy");
+      console.log("New Game: Easy");
       gameState.boardHeight = 9;
       gameState.boardWidth = 9;
       gameState.numberMines = 10;
       break;
 
     case "normal":
-      console.log("normal");
+      console.log("New Game: Normal");
       gameState.boardHeight = 9;
       gameState.boardWidth = 9;
       gameState.numberMines = 10;
       break;
 
     case "hard":
-      console.log("hard");
+      console.log("New Game: Hard");
       gameState.boardHeight = 9;
       gameState.boardWidth = 9;
       gameState.numberMines = 10;
@@ -51,8 +49,6 @@ export default function newGame(difficulty) {
 
   mainContainer.appendChild(gameBoardContainer);
 
-  console.log(gameState.boardCellCount);
-
   gameBoardArray = gameBoardContainer.childNodes;
 
   while (true) {
@@ -64,16 +60,10 @@ export default function newGame(difficulty) {
     let randomNode =
       gameBoardArray[Math.floor(Math.random() * gameState.boardCellCount)];
     if (randomNode.classList.contains("mine")) {
-      console.log("Node is already a mine");
       continue;
     } else {
       randomNode.classList.add("mine");
     }
-    console.log(
-      `Number of mines created: ${
-        document.querySelectorAll(".mine").length
-      } out of ${gameState.numberMines}`
-    );
   }
 
   toggleMenu();
