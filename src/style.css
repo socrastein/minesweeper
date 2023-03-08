@@ -139,8 +139,8 @@
 }
 
 .gameCell {
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
   outline: 1px solid;
   display: flex;
   align-items: center;
@@ -148,7 +148,7 @@
 }
 
 .gameCell:hover {
-  filter: brightness(80%)
+  background-color: lightgrey;
 }
 
 .mine {
