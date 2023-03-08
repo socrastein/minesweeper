@@ -3,7 +3,6 @@ import clickCell from "../gameBoard/clickCell";
 import gameState from "../gameBoard/gameState";
 
 export default function newGame(difficulty) {
-
   switch (difficulty) {
     case "easy":
       console.log("New Game: Easy");
@@ -38,6 +37,10 @@ export default function newGame(difficulty) {
     gameBoardContainer.innerHTML = "";
   }
 
+  gameBoardContainer.addEventListener("mouseleave", () => {
+    gameState.mouseOverGameboard = false;
+  });
+
   for (let i = 0; i < gameState.boardCellCount; i++) {
     let gameBoardCell = document.createElement("div");
     gameBoardCell.classList.add("gameCell");
@@ -65,16 +68,19 @@ export default function newGame(difficulty) {
     }
   }
 
-  var allMyHoverElements = document.getElementsByClassName("gameCell");
+  let allMyHoverElements = document.getElementsByClassName("gameCell");
 
   for (let i = 0; i < allMyHoverElements.length; i++) {
-     allMyHoverElements.item(i).onmouseover = function() {
+    allMyHoverElements.item(i).onmouseover = function () {
+      gameState.mouseOverGameboard = true;
       gameState.hoveredCell = this;
-     }
+    };
   }
-  
+
+  gameState.gameOver = false;
+
   const menuBar = document.getElementById("menuBar");
-  if(menuBar.classList.contains("hidden")){
+  if (menuBar.classList.contains("hidden")) {
     return;
   } else toggleMenu();
 }
