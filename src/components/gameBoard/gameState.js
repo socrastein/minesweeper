@@ -1,9 +1,11 @@
-export default function gameState(){
-  let difficulty = 'easy';
-  let boardHeight = 9;
-  let boardWidth = 9;
-  let boardCellCount = boardHeight * boardWidth;
-  let numberMines = 10;
+const gameState = {
+  difficulty: "easy",
+  boardHeight: 9,
+  boardWidth: 9,
+  numberMines: 10,
+  get boardCellCount() {
+    return this.boardHeight * this.boardWidth;
+  }
+};
 
-  return {difficulty, boardHeight, boardWidth, boardCellCount, numberMines};
-}
+export default gameState;
