@@ -12,12 +12,14 @@ import loadNavBar from "./components/navbar/navBar";
 import onResize from "./components/navbar/navBarResize";
 import newGame from "./components/newGame/newGame";
 import toggleMenu from "./components/navbar/toggleMenu";
+import gameState from "./components/gameBoard/gameState";
 
 
 // CONSTANT ELEMENTS
 window.oncontextmenu = function (){
-  let clickedCell = document.querySelector(":hover");
-  clickedCell.classList.add("green");
+  if(gameState.hoveredCell.innerHTML == "🚩"){
+    gameState.hoveredCell.innerHTML = "";
+  } else gameState.hoveredCell.innerHTML = "🚩";
   return false;
 }
 
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   for (let i = 0; i < allMyHoverElements.length; i++) {
      allMyHoverElements.item(i).onmouseover = function() {
-       console.log('Hello!');
+      gameState.hoveredCell = this;
      }
   }
 });
