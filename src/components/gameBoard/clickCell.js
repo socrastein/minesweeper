@@ -1,8 +1,9 @@
 import gameState from "./gameState";
 import endGame from "./endGame";
+import checkWin from "./checkWin";
 
 function checkNeighboringCells(cellIndex) {
-  let checkedCell = document.getElementById(`cell_${cellIndex}`)
+  let checkedCell = document.getElementById(`cell_${cellIndex}`);
   let neighborValues = [-10, -9, -8, -1, 1, 8, 9, 10]; // surrounding 6 cell's indices;
   // If clicked cell is on left side of board, ignore neighbors to left
   if (cellIndex % gameState.boardWidth == 0) {
@@ -24,33 +25,37 @@ function checkNeighboringCells(cellIndex) {
     if (neighbor.classList.contains("mine")) {
       mineDetected = true;
       mineCount++;
-    }
-    if (!neighbor.classList.contains("clear")){
+    } else checkedCell.classList.add("clear");
+    if (!neighbor.classList.contains("clear")) {
       neighborArray.push(neighborIndex);
     }
-    
   }
 
-  if(mineDetected){
+  if (mineDetected) {
     checkedCell.innerHTML = `${mineCount}`;
-    switch(mineCount){
+    switch (mineCount) {
       case 1:
-        checkedCell.style.backgroundColor = ""
+        checkedCell.style.backgroundColor = "";
     }
   } else {
     checkedCell.style.backgroundColor = "lightgrey";
     checkedCell.classList.add("clear");
-    for(let i in neighborArray){
+    for (let i in neighborArray) {
       checkNeighboringCells(neighborArray[i]);
     }
   }
 
+  checkWin();
 }
 
 export default function clickCell(cell) {
+  if (gameState.gameOver) {
+    return;
+  }
   let cellIndex = Number(cell.target.id.substring(5));
 
   if (cell.target.classList.contains("mine")) {
     endGame();
+    return;
   } else checkNeighboringCells(cellIndex);
 }
