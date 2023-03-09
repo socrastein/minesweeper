@@ -3,12 +3,19 @@ import clickCell from "../gameBoard/clickCell";
 import gameState from "../gameBoard/gameState";
 
 export default function newGame(difficulty) {
+  // Infoboard items:
+  let difficultyDisplay = document.getElementById("difficultyDisplay");
+  let mineCountDisplay = document.getElementById("mineCountDisplay");
+  let flagCountDisplay = document.getElementById("flagCountDisplay");
+
   switch (difficulty) {
     case "easy":
       console.log("New Game: Easy");
       gameState.boardHeight = 9;
       gameState.boardWidth = 9;
       gameState.numberMines = 10;
+      difficultyDisplay.innerHTML = "Easy 9x9"
+      mineCountDisplay.innerHTML = "💣 10x"
       document.documentElement.style.setProperty('--board-width', '9');
       break;
 
@@ -17,6 +24,8 @@ export default function newGame(difficulty) {
       gameState.boardHeight = 12;
       gameState.boardWidth = 12;
       gameState.numberMines = 24;
+      difficultyDisplay.innerHTML = "Normal 12x12"
+      mineCountDisplay.innerHTML = "💣 24x"
       document.documentElement.style.setProperty('--board-width', '12');
 
       break;
@@ -26,10 +35,14 @@ export default function newGame(difficulty) {
       gameState.boardHeight = 16;
       gameState.boardWidth = 16;
       gameState.numberMines = 45;
+      difficultyDisplay.innerHTML = "Hard 16x16";
+      mineCountDisplay.innerHTML = "💣 45x"
       document.documentElement.style.setProperty('--board-width', '16');
 
       break;
   }
+
+  flagCountDisplay.innerHTML = "🚩 0x"
 
   let mainContainer = document.getElementById("mainContainer");
   let gameBoardContainer = document.getElementById("gameBoard");
