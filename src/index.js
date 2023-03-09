@@ -12,6 +12,7 @@ import loadNavBar from "./components/navbar/navBar";
 import onResize from "./components/navbar/navBarResize";
 import newGame from "./components/newGame/newGame";
 import setFlag from "./components/gameBoard/setFlag";
+import infoBoard from "./components/newGame/infoBoard";
 
 
 // CONSTANT ELEMENTS
@@ -25,6 +26,7 @@ window.addEventListener("resize", onResize);
 loadNavBar();
 onResize();
 
+infoBoard();
 newGame("easy");
 
 loadFooter();
