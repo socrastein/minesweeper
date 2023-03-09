@@ -4,14 +4,15 @@ import checkWin from "./checkWin";
 
 function checkNeighboringCells(cellIndex) {
   let checkedCell = document.getElementById(`cell_${cellIndex}`);
-  let neighborValues = [-10, -9, -8, -1, 1, 8, 9, 10]; // surrounding 6 cell's indices;
+  let w = gameState.boardWidth;
+  let neighborValues = [-w - 1, -w, -w + 1, -1, 1, w - 1, w, w + 1]; // surrounding 6 cell's indices;
   // If clicked cell is on left side of board, ignore neighbors to left
-  if (cellIndex % gameState.boardWidth == 0) {
-    neighborValues = [-9, -8, 1, 9, 10];
+  if (cellIndex % w == 0) {
+    neighborValues = [-w, -w - 1, 1, w, w + 1];
   }
   // If clicked cell is on right side of board, ignore neighbors to right
-  if (cellIndex % gameState.boardWidth == 8) {
-    neighborValues = [-10, -9, -1, 8, 9];
+  if (cellIndex % w == w - 1) {
+    neighborValues = [-w - 1, -w, -1, w - 1, w];
   }
   let neighborArray = [];
   let mineDetected = false;
@@ -25,7 +26,8 @@ function checkNeighboringCells(cellIndex) {
     if (neighbor.classList.contains("mine")) {
       mineDetected = true;
       mineCount++;
-    } else checkedCell.classList.add("clear");
+    } else
+      checkedCell.classList.add("clear");
     if (!neighbor.classList.contains("clear")) {
       neighborArray.push(neighborIndex);
     }
