@@ -3,6 +3,7 @@ const gameState = {
   boardHeight: 9,
   boardWidth: 9,
   numberMines: 10,
+  numberFlags: 0,
   hoveredCell: undefined,
   mouseOverGameboard: false,
   gameOver: false,
