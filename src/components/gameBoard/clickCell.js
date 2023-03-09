@@ -8,7 +8,7 @@ function checkNeighboringCells(cellIndex) {
   let neighborValues = [-w - 1, -w, -w + 1, -1, 1, w - 1, w, w + 1]; // surrounding 6 cell's indices;
   // If clicked cell is on left side of board, ignore neighbors to left
   if (cellIndex % w == 0) {
-    neighborValues = [-w, -w - 1, 1, w, w + 1];
+    neighborValues = [-w, -w + 1, 1, w, w + 1];
   }
   // If clicked cell is on right side of board, ignore neighbors to right
   if (cellIndex % w == w - 1) {
@@ -26,8 +26,7 @@ function checkNeighboringCells(cellIndex) {
     if (neighbor.classList.contains("mine")) {
       mineDetected = true;
       mineCount++;
-    } else
-      checkedCell.classList.add("clear");
+    } else checkedCell.classList.add("clear");
     if (!neighbor.classList.contains("clear")) {
       neighborArray.push(neighborIndex);
     }
