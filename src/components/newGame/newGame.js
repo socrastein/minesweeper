@@ -9,20 +9,25 @@ export default function newGame(difficulty) {
       gameState.boardHeight = 9;
       gameState.boardWidth = 9;
       gameState.numberMines = 10;
+      document.documentElement.style.setProperty('--board-width', '9');
       break;
 
     case "normal":
       console.log("New Game: Normal");
-      gameState.boardHeight = 9;
-      gameState.boardWidth = 9;
-      gameState.numberMines = 10;
+      gameState.boardHeight = 12;
+      gameState.boardWidth = 12;
+      gameState.numberMines = 24;
+      document.documentElement.style.setProperty('--board-width', '12');
+
       break;
 
     case "hard":
       console.log("New Game: Hard");
-      gameState.boardHeight = 9;
-      gameState.boardWidth = 9;
-      gameState.numberMines = 10;
+      gameState.boardHeight = 16;
+      gameState.boardWidth = 16;
+      gameState.numberMines = 45;
+      document.documentElement.style.setProperty('--board-width', '16');
+
       break;
   }
 
