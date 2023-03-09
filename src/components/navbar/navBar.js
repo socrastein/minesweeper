@@ -24,7 +24,7 @@ export default function loadNavBar() {
 
   let siteName = document.createElement("p");
   siteName.id = "siteName";
-  siteName.textContent = "Minesweeper";
+  siteName.textContent = "Minesweeper 💣";
   siteTitle.appendChild(siteName);
 
   let menuBar = document.createElement("div");
